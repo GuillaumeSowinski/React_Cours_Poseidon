@@ -1,7 +1,9 @@
+import '../assets/footer.scss';
+
 export function Footer() {
     return (
         <footer>
-            <p>
+            <p className="footer">
                 « Copyright Mexican Food 2024 »
             </p>
         </footer>
