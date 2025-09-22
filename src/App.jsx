@@ -1,6 +1,7 @@
 import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
 import { Dish } from "./components/Dish"
+import './assets/main.scss';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container'
