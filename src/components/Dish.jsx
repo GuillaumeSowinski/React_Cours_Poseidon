@@ -1,11 +1,9 @@
-export function Dish({ Description, prix, image, altImage, slug, stock }) {
+export function Dish({ prix, image, altImage, nom }) {
     return (
         <div>
-            <p>{Description}</p>
-            <p>Prix : {prix}</p>
             <img src={image} alt={altImage} />
-            <p>Slug : {slug}</p>
-            <p>Stock :{stock}</p>
+            <p>Nom : {nom}</p>
+            <p>Prix : {prix}€</p>
         </div>
     )
 }
