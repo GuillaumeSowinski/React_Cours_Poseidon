@@ -1,9 +1,9 @@
-export function Dish({ prix, image, altImage, nom }) {
+export function Dish({ price, image, altImage, name }) {
     return (
         <div>
             <img src={image} alt={altImage} />
-            <p>Nom : {nom}</p>
-            <p>Prix : {prix}€</p>
+            <p>{name}</p>
+            <p>Prix : {price}€</p>
         </div>
     )
 }
