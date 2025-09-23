@@ -46,8 +46,8 @@ function App() {
 
 
   const handleShowNewOnly = () => {
-    setShowNewOnly((prev) => !prev)
-  }
+    setShowNewOnly((prev) => !prev);
+  };
 
   const dishWithStock = dishes.filter(dish => {
     if (showNewOnly) {
@@ -63,7 +63,7 @@ function App() {
       <main>
 
         <Container>
-          <Button variant="primary" onClick={handleShowNewOnly}>Nouveautés uniquement</Button>
+          <Button variant="primary" onClick={handleShowNewOnly}>{showNewOnly ? "Afficher tout" : "Nouveautés uniquement"}</Button>
           <Row >
             {dishWithStock.map((dish) => (
               <Col md={4} key={dish.id} >
