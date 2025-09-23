@@ -11,8 +11,8 @@ import { useState } from "react";
 
 
 function App() {
-
   const [showNewOnly, setShowNewOnly] = useState(false)
+  const [cartCount, setCartCount] = useState(0)
 
   const dishes = [
     {
@@ -49,17 +49,16 @@ function App() {
     setShowNewOnly((prev) => !prev);
   };
 
-  const dishWithStock = dishes.filter(dish => {
-    if (showNewOnly) {
-      return dish.isNew === true && dish.stock > 0
-    }
-    return dish.stock > 0
-  })
+  const addToCart = () => {
+    setCartCount(count => count + 1)
+  }
+
+  const dishWithStock = dishes.filter(dish => dish.stock > 0 && (!showNewOnly || dish.isNew))
 
 
   return (
     <>
-      <Header />
+      <Header cartCount={cartCount} />
       <main>
 
         <Container>
@@ -73,6 +72,7 @@ function App() {
                   altImage={dish.altImage}
                   name={dish.name}
                   isNew={dish.isNew}
+                  addToCart={addToCart}
                 />
               </Col>
             ))}

@@ -5,7 +5,7 @@ import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 
 
-export function Dish({ price, image, altImage, name, isNew }) {
+export function Dish({ price, image, altImage, name, isNew, addToCart }) {
     return (
         <Card>
             {isNew && <Badge bg="primary" className="card-badge">Nouveau</Badge>}
@@ -15,7 +15,7 @@ export function Dish({ price, image, altImage, name, isNew }) {
                 <Card.Text>
                     Prix : {price}€
                 </Card.Text>
-                <Button variant="primary" onClick={() => alert(`Le plat ${name} à été ajouté au panier`)}>Ajouter au panier</Button>
+                <Button variant="primary" onClick={addToCart}>Ajouter au panier</Button>
             </Card.Body>
         </Card>
     )
