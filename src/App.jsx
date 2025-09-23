@@ -56,7 +56,6 @@ function App() {
                   altImage={dish.altImage}
                   name={dish.name}
                   isNew={dish.isNew}
-                  onClick={() => alert(`Le plat ${dish.name} à été ajouté au panier`)}
                 />
               </Col>
             ))}
