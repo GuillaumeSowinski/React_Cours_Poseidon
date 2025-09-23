@@ -44,10 +44,9 @@ function App() {
 
   return (
     <>
-
       <Header />
       <main>
-        <Container >
+        <Container>
           <Row >
             {dishWithStock.map((dish) => (
               <Col md={4} key={dish.id} >
@@ -57,6 +56,7 @@ function App() {
                   altImage={dish.altImage}
                   name={dish.name}
                   isNew={dish.isNew}
+                  onClick={() => alert(`Le plat ${dish.name} à été ajouté au panier`)}
                 />
               </Col>
             ))}
