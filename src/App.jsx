@@ -38,7 +38,7 @@ function App() {
                 image={"https://cdn.pixabay.com/photo/2021/02/04/03/57/mole-5980185_960_720.jpg"}
                 altImage={"Une limace de chocolat accompagnée de carottes rapées et des doritos sur de la sauce"}
                 name="Mole poblano"
-                isNew={true}
+                isNew={false}
               />
             </Col>
           </Row>

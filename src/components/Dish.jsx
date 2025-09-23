@@ -7,7 +7,7 @@ import Badge from 'react-bootstrap/Badge';
 export function Dish({ price, image, altImage, name, isNew }) {
     return (
         <Card>
-            {isNew ? <Badge bg="primary">New</Badge> : null}
+            {isNew ? <Badge bg="primary" className="card-badge">New</Badge> : null}
             <Card.Img src={image} alt={altImage} />
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
