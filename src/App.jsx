@@ -45,9 +45,8 @@ function App() {
         <Container >
           <Row >
             {dishes.map((dish) => (
-              <Col md={4} >
+              <Col md={4} key={dish.id} >
                 <Dish
-                  key={dish.id}
                   price={dish.price}
                   image={dish.image}
                   altImage={dish.altImage}
