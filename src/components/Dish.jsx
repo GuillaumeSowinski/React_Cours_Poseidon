@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../assets/dish.scss';
+import '../assets/styles/dish.scss';
 import Card from 'react-bootstrap/Card';
 
 
