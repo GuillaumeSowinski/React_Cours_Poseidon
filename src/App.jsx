@@ -8,11 +8,8 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container'
 import { useState } from "react";
 
-
-
 function App() {
   const [showNewOnly, setShowNewOnly] = useState(false)
-  const [cartCount, setCartCount] = useState(0)
 
   const dishes = [
     {
@@ -44,23 +41,16 @@ function App() {
     },
   ];
 
-
   const handleShowNewOnly = () => {
     setShowNewOnly((prev) => !prev);
   };
 
-  const addToCart = () => {
-    setCartCount(count => count + 1)
-  }
-
   const dishWithStock = dishes.filter(dish => dish.stock > 0 && (!showNewOnly || dish.isNew))
-
 
   return (
     <>
-      <Header cartCount={cartCount} />
+      <Header />
       <main>
-
         <Container>
           <Button variant="primary" onClick={handleShowNewOnly}>{showNewOnly ? "Afficher tout" : "Nouveautés uniquement"}</Button>
           <Row >
@@ -72,7 +62,6 @@ function App() {
                   altImage={dish.altImage}
                   name={dish.name}
                   isNew={dish.isNew}
-                  addToCart={addToCart}
                 />
               </Col>
             ))}
@@ -80,7 +69,6 @@ function App() {
         </Container>
       </main>
       <Footer />
-
     </>
   )
 }

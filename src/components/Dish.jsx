@@ -3,9 +3,12 @@ import '../assets/styles/dish.scss';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 
-export function Dish({ price, image, altImage, name, isNew, addToCart }) {
+export function Dish({ price, image, altImage, name, isNew }) {
+    const { addToCart } = useContext(CartContext);
     return (
         <Card>
             {isNew && <Badge bg="primary" className="card-badge">Nouveau</Badge>}
