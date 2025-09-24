@@ -6,12 +6,12 @@ import './assets/styles/main.scss';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container'
-import { useState, useRef, useContext, useEffect } from "react";
-import { CartContext } from "./context/CartContext";
+import { useState, useRef, useEffect } from "react";
+import { useCart } from "./hooks/useCart";
 
 function App() {
   const [showNewOnly, setShowNewOnly] = useState(false)
-  const { cartCount } = useContext(CartContext);
+  const { cartCount } = useCart();
   const prevCartCountRef = useRef(cartCount);
 
   useEffect(() => {
