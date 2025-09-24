@@ -6,10 +6,17 @@ import './assets/styles/main.scss';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container'
-import { useState } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
+import { CartContext } from "./context/CartContext";
 
 function App() {
   const [showNewOnly, setShowNewOnly] = useState(false)
+  const { cartCount } = useContext(CartContext);
+  const prevCartCountRef = useRef(cartCount);
+
+  useEffect(() => {
+    prevCartCountRef.current = cartCount;
+  }, [cartCount]);
 
   const dishes = [
     {
@@ -53,6 +60,9 @@ function App() {
       <main>
         <Container>
           <Button variant="primary" onClick={handleShowNewOnly}>{showNewOnly ? "Afficher tout" : "Nouveautés uniquement"}</Button>
+          <div style={{ margin: '1rem 0' }}>
+            Le panier est passé de {prevCartCountRef.current} à {cartCount} articles
+          </div>
           <Row >
             {dishWithStock.map((dish) => (
               <Col md={4} key={dish.id} >
